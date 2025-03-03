@@ -1,0 +1,9 @@
+.logo-container {
+    display:flex;
+    padding:30px;
+    line-height:8vh;
+    height:8vh;
+    background-color:#000C47;
+    color:#fff;
+    justify-content: space-between;
+}
