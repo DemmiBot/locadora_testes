@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Header from './components/header/header'
 import './app.css'
 import NewMovieForm from "./components/new-movie-form/new-movie-form"
-import EditMovieForm from "./components/edit-movie-form/edit-movie-form"
 
 function App() {
 
@@ -15,7 +14,6 @@ function App() {
       <p style={{textAlign:"center", fontWeight:"800", margin:"25px 0"}}>Gerenciamento de filmes</p>
       <div style={{display:"flex", justifyContent:'space-between'}}>
         <NewMovieForm />
-        <EditMovieForm />
       </div>
     </>
   )

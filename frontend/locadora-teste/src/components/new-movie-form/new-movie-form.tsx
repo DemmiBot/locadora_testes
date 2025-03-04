@@ -1,8 +1,13 @@
+import { useState } from "react"
 import "./new-movie-form.css"
+import EditMovieForm from "../edit-movie-form/edit-movie-form"
 
 function NewMovieForm() {
+    let [isToggled, toggle] = useState(false)
+
     return(
         <div className="suspended-form">
+            {EditMovieForm(isToggled, () => toggle(false))}
             <form>
                 <label>Título</label>
                 <input name="titulo" />
@@ -12,9 +17,13 @@ function NewMovieForm() {
                 <input name="lancamento " />
                 <label>Status</label>
                 <input name="status" />
-                <label>Thumbnail</label>
-                <input className="thumbnail" name="thumbnail" type="file"/>
-                <button type="submit">Adicionar</button>
+                <label htmlFor="thumbnail">Thumbnail</label>
+                <input className="thumbnail" name="thumbnail" type="file" accept=".jpg, .png"/>
+                <button type="submit" onClick={(e) =>{
+                    e.preventDefault();
+                    console.log(isToggled)
+                    toggle(true);
+                }}>Adicionar</button>
             </form>
         </div>
     )

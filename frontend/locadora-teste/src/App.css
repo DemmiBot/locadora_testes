@@ -11,12 +11,13 @@ button {
     font-size: 1em;
     border: none;
     border-radius: 30px;
-    transition: .2s;
+    transition: .15s;
     padding: 10px;
 }
 
 button:hover {
     background-color: white;
+    cursor: pointer;
     color: #000C47;
     outline: solid 1px #000C47;
 }
