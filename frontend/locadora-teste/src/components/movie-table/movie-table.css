@@ -1,0 +1,81 @@
+table, td, th, tr {
+    height: max-content; /* ESSE TROÇO QUE FAZ COM QUE AS LINHAS FIQUEM COM A ALTURA CORRETA >:| */
+    padding: 5px 5px;
+    max-height: 50vh;
+}
+
+
+table {
+    max-width: 80%;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    margin: 0 20px;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+tr:nth-child(2) {
+    background-color: rgb(246, 246, 246);
+}
+
+td {
+    max-width: 0; /* td's width is dictated by the th component, but max-width is needed for text overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px solid rgba(173, 173, 173, 0.3);
+    border-right: 1px solid rgba(173, 173, 173, 0.3);
+}
+
+thead tr {
+    border: none;
+}
+
+thead tr th {
+    padding: 10px 20px;
+    border-left: none;
+    border-right: none;
+}
+
+tr th:first-child, td:first-child {
+    border-left: none;
+}
+
+tr th:last-child, td:last-child {
+    border-right: none;
+}
+
+th {
+    background-color: rgb(0, 12, 71);
+    color: #fff;
+    font-weight: 400;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    th {
+        padding: 4px 8px !important;
+        font-size: 1.2rem;
+    }
+    td {
+        font-size: 1rem;
+        padding: 4px 8px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    th {
+        padding: 4px 8px !important;
+        font-size: 1rem;
+    }
+    td {
+        font-size: 1rem;
+        padding: 4px 8px !important;
+    }
+}

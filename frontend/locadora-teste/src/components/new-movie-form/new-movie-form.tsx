@@ -21,7 +21,6 @@ function NewMovieForm() {
                 <input className="thumbnail" name="thumbnail" type="file" accept=".jpg, .png"/>
                 <button type="submit" onClick={(e) =>{
                     e.preventDefault();
-                    console.log(isToggled)
                     toggle(true);
                 }}>Adicionar</button>
             </form>

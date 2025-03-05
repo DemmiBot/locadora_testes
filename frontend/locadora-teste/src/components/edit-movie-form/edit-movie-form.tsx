@@ -18,10 +18,9 @@ function EditMovieForm(openModal:boolean, closeModal:Function) {
     
 
     return(
-        <dialog open={false} ref={ref} onCancel={() =>closeModal()}>
-            <div className="suspended-form modal-form">
+        <dialog className="suspended-form" open={false} ref={ref} onCancel={() =>closeModal()}>
                 <p style={{fontWeight:"bold", textAlign:"center", padding:"20px"}}>Atualizar Cadastro</p>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div className="responsive-container">
                     <form>
                         <label>Título</label>
                         <input name="titulo" />
@@ -36,7 +35,6 @@ function EditMovieForm(openModal:boolean, closeModal:Function) {
                         <button type="submit" formMethod="dialog" onSubmit={() => closeModal()} onClick={() => closeModal()}>Adicionar</button>
                     </form>
                     <img className="thumbnail-edit" src={image}/>
-                </div>
             </div>
         </dialog>
 
