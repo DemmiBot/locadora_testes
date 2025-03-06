@@ -1,38 +1,29 @@
 import './movie-table.css'
+import MovieTableRow from './movie-table-row'
 
 function MovieTable() {
-    return(
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Título</th>
-                <th scope="col">Gênero</th>
-                <th scope="col">Ano de lançamento</th>
-                <th scope="col">Status</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href='#blank'>100002</a></td>
-                <td>100002100002</td>
-                <td>Gen</td>
-                <td>Ano</td>
-                <td>Status</td>
-                <td>b</td>
-            </tr>
-            <tr>
-                <td>Id</td>
-                <td>Tit</td>
-                <td>Gen</td>
-                <td>Ano</td>
-                <td>Status</td>
-                <td>b</td>
-            </tr>
-        </tbody>
-    </table>
+
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" style={{ width: "10%" }}>Id</th>
+                    <th scope="col" >Título</th>
+                    <th scope="col" style={{ width: "12%" }}>Gênero</th>
+                    <th scope="col" style={{ width: "14%" }}>Ano de lançamento</th>
+                    <th scope="col" style={{ width: "10%" }}>Status</th>
+                    <th scope="col" style={{ width: "14%" }}></th>
+                </tr>
+            </thead>
+            <tbody>
+                <MovieTableRow id='1' title='Titulo Teste de filme' genre='Comedia' launch_year='1986' status='alugado' />
+                <MovieTableRow id='1' title='Titulo Teste de filme' genre='Comedia' launch_year='1986' status='alugado' />
+                <MovieTableRow id='1' title='Titulo Teste de filme' genre='Comedia' launch_year='1986' status='alugado' />
+            </tbody>
+        </table>
     )
 }
+
+
 
 export default MovieTable

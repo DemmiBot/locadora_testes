@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Header from './components/header/header'
 import './app.css'
 import NewMovieForm from "./components/new-movie-form/new-movie-form"
