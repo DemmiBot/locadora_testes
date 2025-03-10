@@ -10,7 +10,7 @@
     padding: 20px;
 }
 
-input {
+input, select {
     border: none;
     background-color: #F6F6F6;
     border-radius: 10px;

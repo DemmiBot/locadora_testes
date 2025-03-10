@@ -7,9 +7,6 @@ function App() {
 
   return (
     <>
-      <head>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900" rel="stylesheet" />
-      </head>
       <Header />
       <p style={{textAlign:"center", fontWeight:"800", margin:"25px 0"}}>Gerenciamento de filmes</p>
       <div className='responsive-container'>
