@@ -8,6 +8,7 @@ A stack de tecnologia é a seguinte:
 ### Backend
 
 - Node.js
+- Express
 - Prisma
 - MySQL
 - Docker
@@ -16,3 +17,4 @@ A stack de tecnologia é a seguinte:
 
 - React
 - Typescript
+- Axios
