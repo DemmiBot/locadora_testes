@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 
 function MovieTableRow({
     id,
@@ -6,12 +6,14 @@ function MovieTableRow({
     genre,
     status,
     openModal,
+    deleteMovie
   }: {
     id: string;
     title: string;
     genre: string;
     status: string;
     openModal: () => void;
+    deleteMovie: (id:number) => void;
   }) {
     return (
       <tr>
@@ -20,7 +22,7 @@ function MovieTableRow({
         <td>{genre}</td>
         <td>{status}</td>
         <td>
-          <button onClick={openModal}>Edit</button>
+          <a style={{color:"red", cursor:"pointer"}} onClick={() => deleteMovie(Number(id))}>Excluir</a>
         </td>
       </tr>
     );

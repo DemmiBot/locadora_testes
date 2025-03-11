@@ -1,14 +1,15 @@
 
 import "./new-movie-form.css"
 import { useState } from "react";
+import axios from "axios";
 
 function NewMovieForm() {
     
 
     const [formData, setFormData] = useState({
-        titulo: "",
-        genero: "",
-        status: "",
+        title: "",
+        genre: "",
+        status: false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,8 +21,11 @@ function NewMovieForm() {
     };
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log(formData);
+        try{
+            axios.post("http://localhost:3000/movies/", formData).then((response) => console.log(response));
+        } catch (err) {
+            console.log(err);
+        }
     };
 
 
@@ -30,17 +34,15 @@ function NewMovieForm() {
             
             <form onSubmit={handleSubmit}>
                 <label>Título</label>
-                <input name="titulo" onChange={handleChange} />
+                <input name="title" onChange={handleChange} />
                 <label>Gênero</label>
-                <input name="genero" onChange={handleChange} />
-                <label>Ano de lançamento</label>
-                <input name="lancamento" onChange={handleChange} />
+                <input name="genre" onChange={handleChange} />
                 <label>Status</label>
                 <select name="status" onChange={ (e) => {
                     const { name, value } = e.target;
                     setFormData((prev) => ({
                         ...prev,
-                        [name]:  value
+                        [name]:  value == "disponivel" ? true : false
                     }));
                 }}>
                 <option value={"alugado"}>Alugado</option>

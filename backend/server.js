@@ -48,7 +48,7 @@ app.put('/movies/:id', async (req, res, next) => {
             where: { id: Number(req.params.id) },
             data: req.body,
         });
-        req.json(item);
+        res.json(movie);
     } catch (err) {
         next(err)
     }
@@ -58,7 +58,7 @@ app.put('/movies/:id', async (req, res, next) => {
 app.delete('/movies/:id', async (req, res, next) => {
     try {
         await prisma.movie.delete({ where: { id: Number(req.params.id) } });
-        req.json({ message: 'Deleted successfully' });
+        res.json({ message: 'Deleted successfully' });
     } catch (err) {
         next(err)
     }

@@ -23,7 +23,9 @@ function MovieTable() {
                 console.log(response.data);
             })
             .catch((error) => console.error("Error: ", error));
-    }, []);
+    }, [movies.length]);
+
+    
 
     return (
         <>
@@ -32,8 +34,9 @@ function MovieTable() {
                 closeModal={() => toggle(false)}
                 movie={selectedMovie!} // Pass selected movie here
                 submitMovie={(updatedMovie: Movie) => {
-                    // Handle movie submission (you might want to update the movie in the backend here)
-                    console.log(updatedMovie);
+                    
+                    axios.put("http://localhost:3000/movies/" + selectedMovie?.id, updatedMovie).then((response) => console.log(response));
+
                     toggle(false); // Close the modal after submission
                 }}
             />
@@ -61,7 +64,16 @@ function MovieTable() {
                             title={movie.title}
                             genre={movie.genre}
                             status={movie.status === true ? "Disponível" : "Alugado"}
-                            openModal={() => openModal(movie)} // Pass movie data on click
+                            openModal={() => openModal(movie)}
+                            deleteMovie={() => {
+                                try{
+                                    axios.delete("http://localhost:3000/movies/"+movie.id).then((response) => console.log(response));
+                                    setMovies([])
+                                } catch (err) {
+                                    console.log(err);
+                                }
+
+                            }}
                         />
                     ))}
                 </tbody>
