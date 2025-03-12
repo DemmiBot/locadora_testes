@@ -32,3 +32,8 @@ A stack de tecnologia é a seguinte:
 git clone https://github.com/DemmiBot/locadora_testes.git
 cd locadora_testes
 docker-compose up --build
+```
+
+## Utilização
+
+O software está configurado para abrir no endereço localhost:3000.
