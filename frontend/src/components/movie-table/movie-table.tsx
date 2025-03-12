@@ -17,7 +17,7 @@ function MovieTable() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/movies")
+            .get("http://localhost:5000/movies")
             .then((response) => {
                 setMovies(response.data);
                 console.log(response.data);
@@ -35,7 +35,7 @@ function MovieTable() {
                 movie={selectedMovie!} // Pass selected movie here
                 submitMovie={(updatedMovie: Movie) => {
                     
-                    axios.put("http://localhost:3000/movies/" + selectedMovie?.id, updatedMovie).then((response) => console.log(response));
+                    axios.put("http://localhost:5000/movies/" + selectedMovie?.id, updatedMovie).then((response) => console.log(response));
 
                     toggle(false); // Close the modal after submission
                 }}
@@ -67,7 +67,7 @@ function MovieTable() {
                             openModal={() => openModal(movie)}
                             deleteMovie={() => {
                                 try{
-                                    axios.delete("http://localhost:3000/movies/"+movie.id).then((response) => console.log(response));
+                                    axios.delete("http://localhost:5000/movies/"+movie.id).then((response) => console.log(response));
                                     setMovies([])
                                 } catch (err) {
                                     console.log(err);

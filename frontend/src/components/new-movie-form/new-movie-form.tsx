@@ -20,9 +20,9 @@ function NewMovieForm() {
         }));
     };
 
-    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = () => {
         try{
-            axios.post("http://localhost:3000/movies/", formData).then((response) => console.log(response));
+            axios.post("http://localhost:5000/movies/", formData).then((response) => console.log(response));
         } catch (err) {
             console.log(err);
         }
