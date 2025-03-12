@@ -20,7 +20,7 @@ services:
     build:
       context: ./backend
     command: >
-        sh -c "npx prisma generate && npx prisma migrate dev --name init && npm start"
+        sh -c "until nc -z -v -w30 mysql 3306; do echo 'Waiting for MySQL...'; sleep 5; done; npx prisma generate && npx prisma migrate dev --name init && npm start"
     ports:
       - "5000:5000"
     environment:
