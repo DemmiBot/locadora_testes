@@ -1,7 +1,9 @@
-## Gerenciador de locadora online
+# Gerenciador de locadora online
+
+![Imagem do projeto](<The App.png>)
 
 Este projeto é uma ferramenta de estudo de conceitos básicos de desenvolvimento web.
-O intuito é gerar uma página de gerenciamento interno do estoque de filmes de uma locadora fictícia.
+O intuito é desenvolver uma página de gerenciamento interno de estoque de filmes de uma locadora fictícia.
 
 A stack de tecnologia é a seguinte:
 
@@ -18,3 +20,15 @@ A stack de tecnologia é a seguinte:
 - React
 - Typescript
 - Axios
+
+
+### Pre-requisitos
+- Docker
+- Docker Compose
+
+## Instalação
+
+```bash
+git clone https://github.com/DemmiBot/locadora_testes.git
+cd locadora_testes
+docker-compose up --build
